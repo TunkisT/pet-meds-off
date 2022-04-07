@@ -1,0 +1,7 @@
+.head{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(241, 228, 228, 0.562);
+}

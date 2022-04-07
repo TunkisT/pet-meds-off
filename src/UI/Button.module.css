@@ -1,0 +1,10 @@
+.btn{
+    height: 2em;
+    width: 7em;
+    color: whitesmoke;
+    background-color: orange;
+    border: none;
+    margin-right: 2em;
+    border-radius: 0.3em;
+    font-weight: 600;
+}
