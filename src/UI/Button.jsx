@@ -3,7 +3,6 @@ import css from './Button.module.css';
 import React from 'react';
 
 const Button = (props) => {
-  console.log('props ===', props);
   
   const extraClass = props.outline ? css.outline : '';
 

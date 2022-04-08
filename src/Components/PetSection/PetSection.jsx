@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Button from '../../UI/Button';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
+import { getFetch } from '../../helper/helper';
 const Url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 
 const PetSection = () => {
@@ -13,16 +14,25 @@ const PetSection = () => {
 
   const [petList, setPetList] = useState([]);
 
-  function getPetList() {
-    fetch(Url)
-      .then((resp) => resp.json())
-      .then((data) => {
-        setPetList(data);
-      });
+  async function getPetList() {
+    const data = await getFetch('pets');
+    console.log('data ===', data);
+    setPetList(data);
   }
 
-  function deleteHandler() {
-    console.log('delete veikia');
+  function deleteItem(id) {
+    fetch(`${Url}/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+        alert(data.err);
+        setPetList(petList.filter((obj) => obj.id !== id));
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
 
   return (
@@ -40,9 +50,9 @@ const PetSection = () => {
             <p>{obj.dob}</p>
             <p>{obj.client_email}</p>
             <Button>View log</Button>
-            <Button delete={deleteHandler} outline>
-              Delete
-            </Button>
+            <span onClick={() => deleteItem(obj.id)}>
+              <Button outline>Delete</Button>
+            </span>
           </div>
         ))}
       </div>
