@@ -1,11 +1,13 @@
 import css from './Button.module.css';
 
-import React from 'react'
+import React from 'react';
 
 const Button = (props) => {
-  return (
-    <button className={css.btn}>{props.name}</button>
-  )
-}
+  const extraClass = props.outline ? css.outline : '';
 
-export default Button
+  return (
+    <button className={`${css.btn} ${extraClass}`}>{props.children}</button>
+  );
+};
+
+export default Button;
