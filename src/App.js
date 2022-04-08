@@ -1,6 +1,7 @@
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import './App.css';
+import AddPet from './Pages/AddPetPage/AddPet';
 import MedsPage from './Pages/MedsPage/MedsPage';
 import NotFound from './Pages/NotFound';
 import PetsPage from './Pages/PetsPage/PetsPage';
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route path={'/medication'}>
           <MedsPage />
+        </Route>
+        <Route path={'/addpet'}>
+          <AddPet />
         </Route>
         <Route path={'*'}>
           <NotFound />

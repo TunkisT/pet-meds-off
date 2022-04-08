@@ -1,12 +1,13 @@
 // import css from './MedsPage.module.css';
 import React from 'react';
 import Header from '../../Components/Header/Header';
+import MedSection from '../../Components/MedSection/MedSection';
 
 function MedsPage() {
   return (
     <div>
       <Header />
-      <h2>Meds page</h2>
+      <MedSection />
     </div>
   );
 }

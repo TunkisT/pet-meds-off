@@ -1,6 +1,6 @@
 .btn{
     height: 2.4em;
-    width: 7.3em;
+    min-width: 7.3em;
     color: whitesmoke;
     background-color: orange;
     border: none;
