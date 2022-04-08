@@ -1,4 +1,4 @@
-import css from './PetForm.module.css';
+import css from './PetForm.module.scss';
 
 import React, { useState } from 'react';
 import Button from '../../UI/Button';
