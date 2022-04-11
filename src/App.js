@@ -2,6 +2,7 @@ import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Footer from './Components/Footer/Footer';
+import AddLog from './Pages/AddLog/AddLog';
 import AddMed from './Pages/AddMed/AddMed';
 import AddPet from './Pages/AddPetPage/AddPet';
 import LogsPage from './Pages/LogsPage/LogsPage';
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path={'/logs/:petId'}>
           <LogsPage />
+        </Route>
+        <Route path={'/add-log'}>
+          <AddLog />
         </Route>
         <Route path={'*'}>
           <NotFound />

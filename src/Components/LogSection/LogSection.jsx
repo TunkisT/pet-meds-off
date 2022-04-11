@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { getFetch } from '../../helper/helper';
 import Button from '../../UI/Button';
 import { Link } from 'react-router-dom';
-import Footer from '../Footer/Footer';
 
 function LogSection() {
   const { petId } = useParams();
@@ -17,9 +16,12 @@ function LogSection() {
   }, []);
 
   async function getLogs() {
-    // const data = await getFetch(`logs/${petId}`);
-    const data = await getFetch(`logs/51`);
-    console.log('data ===', data[0].name);
+    const data = await getFetch(`logs/${petId}`);
+    if (data.length === 0) {
+      return;
+    }
+    // const data = await getFetch(`logs/51`);
+    console.log('data ===', data);
     setLog(data);
     setName(data[0].name);
   }
@@ -29,9 +31,9 @@ function LogSection() {
   return (
     <section>
       <div className={css.first}>
-        <h1>{name}: Health record</h1>
+        <h1>{name} Health record</h1>
         <div>
-          <Link to={'/add-log'}>
+          <Link to={`/add-log?petId=${petId}`}>
             <Button>add log</Button>
           </Link>
           <Link to={'/add-prescription'}>
