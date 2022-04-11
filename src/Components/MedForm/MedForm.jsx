@@ -37,29 +37,32 @@ function MedForm() {
   }
 
   return (
-    <div className={css.formdiv}>
-      <form onSubmit={formHandler} className={css.form}>
-        <label htmlFor=''>Name</label>
-        <br />
-        <input
-          onChange={(e) => setName(e.target.value)}
-          className={css.input}
-          type='text'
-          placeholder='Name'
-        />
-        <br />
-        <label htmlFor=''>Description</label>
-        <br />
-        <input
-          onChange={(e) => setDescription(e.target.value)}
-          className={css.input}
-          type='text'
-          placeholder='Description'
-        />
-        <br />
-        <Button>Submit</Button>
-      </form>
-    </div>
+    <>
+      <h1 className={css.hOne}>Add medication</h1>
+      <div className={css.formdiv}>
+        <form onSubmit={formHandler} className={css.form}>
+          <label htmlFor=''>Name</label>
+          <br />
+          <input
+            onChange={(e) => setName(e.target.value)}
+            className={css.input}
+            type='text'
+            placeholder='Name'
+          />
+          <br />
+          <label htmlFor=''>Description</label>
+          <br />
+          <input
+            onChange={(e) => setDescription(e.target.value)}
+            className={css.input}
+            type='text'
+            placeholder='Description'
+          />
+          <br />
+          <Button>Submit</Button>
+        </form>
+      </div>
+    </>
   );
 }
 

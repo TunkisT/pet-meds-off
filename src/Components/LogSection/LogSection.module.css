@@ -1,0 +1,20 @@
+.first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.card{
+    width: 30%;
+    border-radius: 0.3em;
+    padding: 1em;
+    text-align: center;
+    border: 1px solid rgb(211, 200, 200);
+}
+.name{
+    text-transform: capitalize;
+}

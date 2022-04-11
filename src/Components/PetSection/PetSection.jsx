@@ -61,7 +61,6 @@ const PetSection = () => {
           </div>
         ))}
       </div>
-      <Footer />
     </section>
   );
 };

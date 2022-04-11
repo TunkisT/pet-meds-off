@@ -1,3 +1,4 @@
+import Footer from '../../Components/Footer/Footer';
 import Header from '../../Components/Header/Header';
 import PetSection from '../../Components/PetSection/PetSection';
 

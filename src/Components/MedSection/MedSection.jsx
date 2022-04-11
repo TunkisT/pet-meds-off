@@ -38,7 +38,6 @@ const MedSection = () => {
           </div>
         ))}
       </div>
-      <Footer />
     </section>
   );
 };

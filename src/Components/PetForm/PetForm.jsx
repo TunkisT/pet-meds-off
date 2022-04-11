@@ -39,38 +39,41 @@ function PetForm() {
   }
 
   return (
-    <div className={css.formdiv}>
-      <form onSubmit={formHandler} className={css.form}>
-        <label htmlFor=''>Name</label>
-        <br />
-        <input
-          onChange={(e) => setName(e.target.value)}
-          className={css.input}
-          type='text'
-          placeholder='Name'
-        />
-        <br />
-        <label htmlFor=''>Date</label>
-        <br />
-        <input
-          onChange={(e) => setDate(e.target.value)}
-          className={css.input}
-          type='text'
-          placeholder='YYYY-MM-DD'
-        />
-        <br />
-        <label htmlFor=''>Email</label>
-        <br />
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          className={css.input}
-          type='email'
-          placeholder='email'
-        />
-        <br />
-        <Button>Submit</Button>
-      </form>
-    </div>
+    <>
+      <h1 className={css.hOne}>Add your pet</h1>
+      <div className={css.formdiv}>
+        <form onSubmit={formHandler} className={css.form}>
+          <label htmlFor=''>Name</label>
+          <br />
+          <input
+            onChange={(e) => setName(e.target.value)}
+            className={css.input}
+            type='text'
+            placeholder='Name'
+          />
+          <br />
+          <label htmlFor=''>Date</label>
+          <br />
+          <input
+            onChange={(e) => setDate(e.target.value)}
+            className={css.input}
+            type='text'
+            placeholder='YYYY-MM-DD'
+          />
+          <br />
+          <label htmlFor=''>Email</label>
+          <br />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            className={css.input}
+            type='email'
+            placeholder='email'
+          />
+          <br />
+          <Button>Submit</Button>
+        </form>
+      </div>
+    </>
   );
 }
 
