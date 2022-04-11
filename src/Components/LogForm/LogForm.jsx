@@ -16,6 +16,7 @@ function LogForm() {
     return React.useMemo(() => new URLSearchParams(search), [search]);
   }
 
+
   let query = useQuery();
   const petId = query.get('petId');
   console.log('petId ===', petId);

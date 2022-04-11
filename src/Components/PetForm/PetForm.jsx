@@ -30,7 +30,7 @@ function PetForm() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        data.changes === 1 ? alert('Pet added') : alert('Pet not added');
+        data.changes === 1 ? alert('Pet added') : alert(data.err);
       })
       .catch((error) => {
         console.error('Error:', error);
