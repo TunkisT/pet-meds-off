@@ -1,20 +1,18 @@
-import css from './PetForm.module.scss';
+import css from './MedForm.module.scss';
 
 import React, { useState } from 'react';
 import Button from '../../UI/Button';
 import { useHistory } from 'react-router-dom';
-const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
+const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/meds';
 
-function PetForm() {
+function MedForm() {
   const history = useHistory();
   const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-  const [email, setEmail] = useState('');
+  const [description, setDescription] = useState('');
 
-  const petFormData = {
+  const medFormData = {
     name,
-    dob: date,
-    client_email: email,
+    description,
   };
 
   function formHandler(e) {
@@ -25,17 +23,17 @@ function PetForm() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(petFormData),
+      body: JSON.stringify(medFormData),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        data.changes === 1 ? alert('Pet added') : alert('Pet not added');
+        data.changes === 1 ? alert('Med added') : alert('Met not added');
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-    history.push('/');
+    history.push('/medication');
   }
 
   return (
@@ -50,22 +48,13 @@ function PetForm() {
           placeholder='Name'
         />
         <br />
-        <label htmlFor=''>Date</label>
+        <label htmlFor=''>Description</label>
         <br />
         <input
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => setDescription(e.target.value)}
           className={css.input}
           type='text'
-          placeholder='YYYY-MM-DD'
-        />
-        <br />
-        <label htmlFor=''>Email</label>
-        <br />
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          className={css.input}
-          type='email'
-          placeholder='email'
+          placeholder='Description'
         />
         <br />
         <Button>Submit</Button>
@@ -74,4 +63,4 @@ function PetForm() {
   );
 }
 
-export default PetForm;
+export default MedForm;

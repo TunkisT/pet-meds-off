@@ -1,10 +1,10 @@
-import css from './LogsPage.module.css';
-import React from 'react'
+import React from 'react';
 
 function LogsPage() {
-  return (
-    <div>LogsPage</div>
-  )
+  return <div>
+    <h1>Logs</h1>
+    
+  </div>;
 }
 
-export default LogsPage
+export default LogsPage;

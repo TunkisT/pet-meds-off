@@ -47,9 +47,14 @@ const PetSection = () => {
         {petList.map((obj) => (
           <div className={css.card} key={obj.id}>
             <h1 className={css.name}>{obj.name}</h1>
-            <p>{obj.dob}</p>
+            <p>
+              {new Date(obj.dob).toLocaleString('lt', { dateStyle: 'long' })}
+            </p>
             <p>{obj.client_email}</p>
-            <Button>View log</Button>
+            <Link to={`/logs/${obj.id}`}>
+              <Button>View log</Button>
+            </Link>
+
             <span onClick={() => deleteItem(obj.id)}>
               <Button outline>Delete</Button>
             </span>

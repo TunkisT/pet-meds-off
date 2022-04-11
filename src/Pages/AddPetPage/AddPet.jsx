@@ -5,6 +5,7 @@ function AddPet() {
   return (
     <div>
       <Header />
+      <h1>Add your pet</h1>
       <PetForm />
     </div>
   );
