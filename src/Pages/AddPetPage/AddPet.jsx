@@ -5,7 +5,6 @@ import PetForm from '../../Components/PetForm/PetForm';
 function AddPet() {
   return (
     <div>
-      <Header />
       <PetForm />
     </div>
   );

@@ -1,13 +1,14 @@
 import css from './PetSection.module.css';
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from '../../UI/Button';
-import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import { getFetch } from '../../helper/helper';
+import AuthContext from '../../store/authContext';
 const Url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 
 const PetSection = () => {
+  const authCtxValue = useContext(AuthContext);
   useEffect(() => {
     getPetList();
   }, []);
@@ -16,7 +17,6 @@ const PetSection = () => {
 
   async function getPetList() {
     const data = await getFetch('pets');
-    console.log('data ===', data);
     setPetList(data);
   }
 
@@ -57,6 +57,9 @@ const PetSection = () => {
 
             <span onClick={() => deleteItem(obj.id)}>
               <Button outline>Delete</Button>
+            </span>
+            <span onClick={authCtxValue.logout}>
+              <Button>LogOut</Button>
             </span>
           </div>
         ))}

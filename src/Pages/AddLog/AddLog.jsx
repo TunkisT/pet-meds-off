@@ -4,7 +4,6 @@ import LogForm from '../../Components/LogForm/LogForm';
 function AddLog() {
   return (
     <div>
-      <Header />
       <LogForm />
     </div>
   );

@@ -1,9 +1,13 @@
 import css from './Navigation.module.css';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import Button from '../../UI/Button';
+import AuthContext from '../../store/authContext';
 
 const Navigation = () => {
+  const authCtxValue = useContext(AuthContext);
+  console.log('authCtxValue ===', authCtxValue);
   return (
     <nav>
       <NavLink className={css.link} to='/'>
@@ -12,6 +16,21 @@ const Navigation = () => {
       <NavLink className={css.link} to='/medication'>
         Medications
       </NavLink>
+      {!authCtxValue.isLogged && (
+        <NavLink className={css.link} to='/login'>
+          Login
+        </NavLink>
+      )}
+      {!authCtxValue.isLogged && (
+        <NavLink className={css.link} to='/register'>
+          Register
+        </NavLink>
+      )}
+      {authCtxValue.isLogged && (
+        <span onClick={authCtxValue.logout}>
+          <Button>LogOut</Button>
+        </span>
+      )}
     </nav>
   );
 };

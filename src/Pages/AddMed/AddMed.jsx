@@ -4,7 +4,6 @@ import MedForm from '../../Components/MedForm/MedForm';
 function AddMed() {
   return (
     <div>
-      <Header />
       <MedForm />
     </div>
   );
