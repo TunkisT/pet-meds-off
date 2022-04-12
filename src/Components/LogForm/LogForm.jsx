@@ -16,7 +16,6 @@ function LogForm() {
     return React.useMemo(() => new URLSearchParams(search), [search]);
   }
 
-
   let query = useQuery();
   const petId = query.get('petId');
   console.log('petId ===', petId);
@@ -41,7 +40,7 @@ function LogForm() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        data.changes === 1 ? alert('Med added') : alert('Met not added');
+        data.changes === 1 ? alert('Log added') : alert('Log not added');
       })
       .catch((error) => {
         console.error('Error:', error);

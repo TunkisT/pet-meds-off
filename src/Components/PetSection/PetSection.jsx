@@ -58,9 +58,11 @@ const PetSection = () => {
             <span onClick={() => deleteItem(obj.id)}>
               <Button outline>Delete</Button>
             </span>
-            <span onClick={authCtxValue.logout}>
-              <Button>LogOut</Button>
-            </span>
+            {authCtxValue.isLogged && (
+              <span onClick={authCtxValue.logout}>
+                <Button>LogOut</Button>
+              </span>
+            )}
           </div>
         ))}
       </div>

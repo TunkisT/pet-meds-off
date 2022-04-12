@@ -5,8 +5,7 @@ import LogSection from '../../Components/LogSection/LogSection';
 function LogsPage() {
   return (
     <div>
-      <Header />
-      <LogSection/>
+      <LogSection />
     </div>
   );
 }
