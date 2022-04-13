@@ -16,6 +16,15 @@ import AuthContext from './store/authContext';
 
 function App() {
   const [isLogged, setIslogged] = useState(false);
+  const [colorMode, setColorMode] = useState(true);
+
+  function setDark() {
+    setColorMode(false);
+  }
+
+  function setWhite() {
+    setColorMode(true);
+  }
 
   function logout() {
     setIslogged(false);
@@ -25,14 +34,22 @@ function App() {
   }
 
   const currentContext = {
+    setWhite,
+    setDark,
+    colorMode,
     isLogged,
     logout,
     login,
   };
 
+  let darkMode = {};
+  if (colorMode === false) {
+    darkMode = { backgroundColor: 'black', color: 'white' };
+  }
+
   return (
     <AuthContext.Provider value={currentContext}>
-      <div className='App'>
+      <div style={darkMode} className='App'>
         <Header />
         <Switch>
           <Route path={'/'} exact>

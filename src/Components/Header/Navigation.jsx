@@ -31,6 +31,16 @@ const Navigation = () => {
           <Button>LogOut</Button>
         </span>
       )}
+      {authCtxValue.colorMode && (
+        <span onClick={authCtxValue.setDark}>
+          <Button>Dark mode</Button>
+        </span>
+      )}
+      {!authCtxValue.colorMode && (
+        <span onClick={authCtxValue.setWhite}>
+          <Button>White mode</Button>
+        </span>
+      )}
     </nav>
   );
 };
